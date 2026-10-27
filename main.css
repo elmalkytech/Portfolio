@@ -61,9 +61,9 @@ html {
 
     border-radius: 25px;
 
-    background: #e9ecef;
+    background: #2a2e31;
 
-    border: 1px solid #d1d5d8;
+    border: 1px solid #34393c;
 
     box-shadow:
         0 15px 45px rgba(0, 0, 0, 0.08);
@@ -94,3 +94,594 @@ html {
     }
 
 }
+        /* =========================================
+           CONTACT SECTION
+        ========================================= */
+
+        .contact-section {
+            min-height: calc(100vh - 80px);
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            padding: 70px 20px;
+        }
+
+        .contact-container {
+            width: 100%;
+            max-width: 950px;
+
+            text-align: center;
+        }
+
+
+        /* =========================================
+           TITLE
+        ========================================= */
+
+        .contact-title {
+            font-size: 44px;
+
+            font-weight: 700;
+
+            margin-bottom: 15px;
+
+            color: #ffffff;
+        }
+
+        .contact-subtitle {
+            max-width: 650px;
+
+            margin: 0 auto 55px;
+
+            color: #aaaaaa;
+
+            font-size: 18px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           CONTACT CARDS
+        ========================================= */
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .contact-card {
+            background: #2a2a2a;
+
+            border: 1px solid #3d3d3d;
+
+            border-radius: 22px;
+
+            padding: 40px 25px;
+
+            min-height: 240px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-decoration: none;
+
+            color: #ffffff;
+
+            box-shadow:
+                0 15px 40px
+                rgba(0, 0, 0, 0.30);
+
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+
+        .contact-card:hover {
+            transform: translateY(-8px);
+
+            background: #333333;
+
+            border-color: #555555;
+
+            box-shadow:
+                0 20px 50px
+                rgba(0, 0, 0, 0.45);
+        }
+
+
+        .contact-icon {
+            font-size: 45px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .contact-card h3 {
+            font-size: 21px;
+
+            font-weight: 600;
+
+            margin-bottom: 12px;
+
+            color: #ffffff;
+        }
+
+
+        .contact-card p {
+            margin: 0;
+
+            color: #bcbcbc;
+
+            font-size: 15px;
+
+            word-break: break-word;
+        }
+
+
+        /* =========================================
+           FOOTER TEXT
+        ========================================= */
+
+        .contact-footer {
+            margin-top: 45px;
+
+            color: #888888;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================================
+           RTL
+        ========================================= */
+
+
+        html[dir="rtl"] .contact-container {
+            direction: rtl;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 768px) {
+
+        
+            .contact-section {
+                padding: 50px 20px;
+            }
+
+            .contact-title {
+                font-size: 36px;
+            }
+
+            .contact-subtitle {
+                font-size: 16px;
+
+                margin-bottom: 35px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+
+                max-width: 450px;
+
+                margin: auto;
+            }
+        }
+
+
+        /* =========================================
+           PAGE
+           ========================================= */
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            transition:
+                opacity 0.35s ease,
+                direction 0.4s ease;
+        }
+
+
+       /* =========================================
+   LANGUAGE ANIMATION
+========================================= */
+
+.language-changing {
+    animation: languageFade 0.5s ease;
+}
+
+@keyframes languageFade {
+
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    45% {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   LANGUAGE LABEL
+========================================= */
+
+#languageLabel {
+    display: inline-block;
+
+    min-width: 28px;
+
+    color: inherit;
+
+    font-weight: 600;
+
+    opacity: 1 !important;
+
+    transform: none !important;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* Never leave the label hidden */
+
+#languageLabel.language-label-changing {
+    animation: labelFade 0.5s ease;
+}
+
+@keyframes labelFade {
+
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    45% {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+        /* =========================================
+           ABOUT SECTION
+           ========================================= */
+
+        .about-section {
+
+            min-height: calc(100vh - 70px);
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 60px 20px;
+
+            text-align: center;
+
+        }
+
+
+        /* =========================================
+           STEPPER
+           ========================================= */
+
+        .company-stepper {
+
+            width: 100%;
+            max-width: 900px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            margin-bottom: 55px;
+
+            position: relative;
+
+        }
+
+
+        /* Connecting line */
+
+        .company-stepper::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 20px;
+            left: 8%;
+            right: 8%;
+
+            height: 2px;
+
+            background: #d6d6d6;
+
+            z-index: 0;
+
+        }
+
+
+        .company-step {
+
+            position: relative;
+
+            z-index: 1;
+
+            width: 25%;
+
+            cursor: pointer;
+
+            border: none;
+
+            background: transparent;
+
+            padding: 0 5px;
+
+            color: inherit;
+
+        }
+
+
+        /* Circle */
+
+        .step-circle {
+
+            width: 42px;
+            height: 42px;
+
+            margin: 0 auto 10px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: white;
+
+            border: 2px solid #bdbdbd;
+
+            font-weight: bold;
+
+            transition:
+                background 0.35s ease,
+                color 0.35s ease,
+                transform 0.35s ease,
+                border-color 0.35s ease;
+
+        }
+
+
+        /* Step text */
+
+        .step-title {
+
+            display: block;
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+            transition:
+                opacity 0.25s ease,
+                transform 0.25s ease;
+
+        }
+
+
+        /* Active step */
+
+        .company-step.active .step-circle {
+
+            background: #212529;
+
+            color: white;
+
+            border-color: #212529;
+
+            transform: scale(1.12);
+
+        }
+
+
+        .company-step.active .step-title {
+
+            font-weight: 700;
+
+        }
+
+
+        /* Hover */
+
+        .company-step:hover .step-circle {
+
+            transform: scale(1.08);
+
+        }
+
+
+        /* =========================================
+           INFORMATION BOX
+           ========================================= */
+
+        
+
+
+        .story-box.changing {
+
+            opacity: 0;
+
+            transform:
+                translateY(15px)
+                scale(0.98);
+
+        }
+
+
+        .story-icon {
+
+            font-size: 42px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .story-title {
+
+            margin-bottom: 18px;
+
+            font-size: 30px;
+
+            font-weight: 700;
+
+        }
+
+
+        .story-content {
+
+            max-width: 620px;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            margin: 0;
+
+        }
+
+
+        .founders {
+
+            margin-top: 20px;
+
+            font-weight: 600;
+
+        }
+
+
+        .founding-date {
+
+            margin-top: 8px;
+
+            opacity: 0.7;
+
+            font-size: 15px;
+
+        }
+
+
+        /* =========================================
+           MOBILE
+           ========================================= */
+
+        @media (max-width: 700px) {
+
+            .about-section {
+
+                padding: 40px 15px;
+
+            }
+
+
+            .company-stepper {
+
+                margin-bottom: 40px;
+
+            }
+
+
+            .company-stepper::before {
+
+                left: 10%;
+                right: 10%;
+
+            }
+
+
+            .step-circle {
+
+                width: 35px;
+                height: 35px;
+
+                font-size: 13px;
+
+            }
+
+
+            .step-title {
+
+                font-size: 11px;
+
+            }
+
+
+            .story-box {
+
+                padding: 35px 25px;
+
+                min-height: 330px;
+
+                border-radius: 20px;
+
+            }
+
+
+            .story-title {
+
+                font-size: 25px;
+
+            }
+
+
+            .story-content {
+
+                font-size: 16px;
+
+                line-height: 1.7;
+
+            }
+
+        }
+
+
+        
