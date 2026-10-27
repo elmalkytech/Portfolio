@@ -1,0 +1,1229 @@
+```html
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="main.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe"
+        crossorigin="anonymous">
+
+    <script type="module"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+        crossorigin="anonymous">
+    </script>
+
+    <title>Elmalky Tech</title>
+
+    <style>
+
+        /* =========================================
+           PAGE
+           ========================================= */
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            transition:
+                opacity 0.35s ease,
+                direction 0.4s ease;
+        }
+
+
+        /* =========================================
+           LANGUAGE ANIMATION
+           ========================================= */
+
+        .language-changing {
+            animation: languageFade 0.5s ease;
+        }
+
+        @keyframes languageFade {
+
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            45% {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        #languageLabel {
+            display: inline-block;
+            min-width: 28px;
+
+            font-weight: 600;
+
+            transition:
+                opacity 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .language-label-changing {
+            opacity: 0 !important;
+            transform: translateY(-5px);
+        }
+
+
+        /* =========================================
+           ABOUT SECTION
+           ========================================= */
+
+        .about-section {
+
+            min-height: calc(100vh - 70px);
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 60px 20px;
+
+            text-align: center;
+
+        }
+
+
+        /* =========================================
+           STEPPER
+           ========================================= */
+
+        .company-stepper {
+
+            width: 100%;
+            max-width: 900px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            margin-bottom: 55px;
+
+            position: relative;
+
+        }
+
+
+        /* Connecting line */
+
+        .company-stepper::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 20px;
+            left: 8%;
+            right: 8%;
+
+            height: 2px;
+
+            background: #d6d6d6;
+
+            z-index: 0;
+
+        }
+
+
+        .company-step {
+
+            position: relative;
+
+            z-index: 1;
+
+            width: 25%;
+
+            cursor: pointer;
+
+            border: none;
+
+            background: transparent;
+
+            padding: 0 5px;
+
+            color: inherit;
+
+        }
+
+
+        /* Circle */
+
+        .step-circle {
+
+            width: 42px;
+            height: 42px;
+
+            margin: 0 auto 10px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: white;
+
+            border: 2px solid #bdbdbd;
+
+            font-weight: bold;
+
+            transition:
+                background 0.35s ease,
+                color 0.35s ease,
+                transform 0.35s ease,
+                border-color 0.35s ease;
+
+        }
+
+
+        /* Step text */
+
+        .step-title {
+
+            display: block;
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+            transition:
+                opacity 0.25s ease,
+                transform 0.25s ease;
+
+        }
+
+
+        /* Active step */
+
+        .company-step.active .step-circle {
+
+            background: #212529;
+
+            color: white;
+
+            border-color: #212529;
+
+            transform: scale(1.12);
+
+        }
+
+
+        .company-step.active .step-title {
+
+            font-weight: 700;
+
+        }
+
+
+        /* Hover */
+
+        .company-step:hover .step-circle {
+
+            transform: scale(1.08);
+
+        }
+
+
+        /* =========================================
+           INFORMATION BOX
+           ========================================= */
+
+        .story-box {
+
+            width: 100%;
+            max-width: 750px;
+
+            min-height: 310px;
+
+            padding: 50px 55px;
+
+            border-radius: 25px;
+
+            background: white;
+
+            border: 1px solid rgba(0, 0, 0, 0.08);
+
+            box-shadow:
+                0 15px 45px rgba(0, 0, 0, 0.08);
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+
+            transition:
+                opacity 0.35s ease,
+                transform 0.35s ease;
+
+        }
+
+
+        .story-box.changing {
+
+            opacity: 0;
+
+            transform:
+                translateY(15px)
+                scale(0.98);
+
+        }
+
+
+        .story-icon {
+
+            font-size: 42px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .story-title {
+
+            margin-bottom: 18px;
+
+            font-size: 30px;
+
+            font-weight: 700;
+
+        }
+
+
+        .story-content {
+
+            max-width: 620px;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            margin: 0;
+
+        }
+
+
+        .founders {
+
+            margin-top: 20px;
+
+            font-weight: 600;
+
+        }
+
+
+        .founding-date {
+
+            margin-top: 8px;
+
+            opacity: 0.7;
+
+            font-size: 15px;
+
+        }
+
+
+        /* =========================================
+           MOBILE
+           ========================================= */
+
+        @media (max-width: 700px) {
+
+            .about-section {
+
+                padding: 40px 15px;
+
+            }
+
+
+            .company-stepper {
+
+                margin-bottom: 40px;
+
+            }
+
+
+            .company-stepper::before {
+
+                left: 10%;
+                right: 10%;
+
+            }
+
+
+            .step-circle {
+
+                width: 35px;
+                height: 35px;
+
+                font-size: 13px;
+
+            }
+
+
+            .step-title {
+
+                font-size: 11px;
+
+            }
+
+
+            .story-box {
+
+                padding: 35px 25px;
+
+                min-height: 330px;
+
+                border-radius: 20px;
+
+            }
+
+
+            .story-title {
+
+                font-size: 25px;
+
+            }
+
+
+            .story-content {
+
+                font-size: 16px;
+
+                line-height: 1.7;
+
+            }
+
+        }
+
+
+        /* =========================================
+           REDUCED MOTION
+           ========================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration: 0.01ms !important;
+
+                transition-duration: 0.01ms !important;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     NAVBAR
+     ========================================= -->
+
+<nav class="navbar sm:navbar-expand bg-1 fg-2">
+
+    <div class="container-fluid">
+
+
+        <!-- Logo -->
+
+        <a class="navbar-brand"
+           href="/index.html"
+           data-en="Elmalky Tech"
+           data-ar="الملكي للتكنولوجيا">
+
+            Elmalky Tech
+
+        </a>
+
+
+        <!-- Mobile menu -->
+
+        <button class="btn-icon navbar-toggler"
+                type="button"
+                data-bs-toggle="drawer"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"
+                  aria-hidden="true">
+            </span>
+
+        </button>
+
+
+        <!-- Navigation -->
+
+        <dialog class="drawer drawer-end"
+                tabindex="-1"
+                id="navbarNav"
+                aria-labelledby="navbarNavLabel">
+
+
+            <div class="drawer-header">
+
+                <h5 class="drawer-title"
+                    id="navbarNavLabel"
+                    data-en="Menu"
+                    data-ar="القائمة">
+
+                    Menu
+
+                </h5>
+
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="drawer"
+                        aria-label="Close">
+                </button>
+
+            </div>
+
+
+            <div class="drawer-body">
+
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+
+                        <a class="nav-link active"
+                           aria-current="page"
+                           href="/whoweare.html"
+                           data-en="Who we are"
+                           data-ar="من نحن">
+
+                            Who we are
+
+                        </a>
+
+                    </li>
+
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                           href="/contact.html"
+                           data-en="Contact"
+                           data-ar="اتصل بنا">
+
+                            Contact
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </dialog>
+
+
+        <!-- Language switch -->
+
+        <div class="form-field">
+
+            <div class="switch theme-secondary">
+
+                <input type="checkbox"
+                       id="languageSwitch"
+                       role="switch">
+
+            </div>
+
+
+            <label for="languageSwitch"
+                   id="languageLabel">
+
+                AR
+
+            </label>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================================
+     COMPANY STORY
+     ========================================= -->
+
+<main class="about-section">
+
+
+    <!-- STEPPER -->
+
+    <div class="company-stepper"
+         id="companyStepper">
+
+
+        <!-- STEP 1 -->
+
+        <button class="company-step active"
+                type="button"
+                data-step="0">
+
+            <span class="step-circle">
+                1
+            </span>
+
+            <span class="step-title"
+                  data-en="Start"
+                  data-ar="البداية">
+
+                Start
+
+            </span>
+
+        </button>
+
+
+        <!-- STEP 2 -->
+
+        <button class="company-step"
+                type="button"
+                data-step="1">
+
+            <span class="step-circle">
+                2
+            </span>
+
+            <span class="step-title"
+                  data-en="Our Goal"
+                  data-ar="هدفنا">
+
+                Our Goal
+
+            </span>
+
+        </button>
+
+
+        <!-- STEP 3 -->
+
+        <button class="company-step"
+                type="button"
+                data-step="2">
+
+            <span class="step-circle">
+                3
+            </span>
+
+            <span class="step-title"
+                  data-en="Where We Are Now"
+                  data-ar="أين نحن الآن">
+
+                Where We Are Now
+
+            </span>
+
+        </button>
+
+
+        <!-- STEP 4 -->
+
+        <button class="company-step"
+                type="button"
+                data-step="3">
+
+            <span class="step-circle">
+                4
+            </span>
+
+            <span class="step-title"
+                  data-en="Our Promise"
+                  data-ar="وعدنا">
+
+                Our Promise
+
+            </span>
+
+        </button>
+
+    </div>
+
+
+
+    <!-- STORY BOX -->
+
+    <section class="story-box"
+             id="storyBox"
+             aria-live="polite">
+
+
+        <div class="story-icon"
+             id="storyIcon">
+
+            🚀
+
+        </div>
+
+
+        <h1 class="story-title"
+            id="storyTitle">
+
+            How We Started
+
+        </h1>
+
+
+        <p class="story-content"
+           id="storyContent">
+
+            Elmalky Tech started with a shared vision between three founders
+            who wanted to create meaningful technology and build software
+            that solves real problems.
+
+        </p>
+
+
+        <div class="founders"
+             id="founders">
+
+            Founders: Shaban Elmalky, Basel Eslam, Sherif Tareq
+
+        </div>
+
+
+        <div class="founding-date"
+             id="foundingDate">
+
+            Founded: FOUNDING DATE
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<script>
+
+
+/* =========================================
+   COMPANY STORY DATA
+   ========================================= */
+
+const stories = [
+
+    {
+
+        icon: "🚀",
+
+        title: {
+            en: "How We Started",
+            ar: "كيف بدأنا"
+        },
+
+        content: {
+
+            en:
+                "Elmalky Tech started with a shared vision between three founders who wanted to create meaningful technology and build software that solves real problems.",
+
+            ar:
+                "بدأت شركة الملكي للتكنولوجيا برؤية مشتركة بين ثلاثة مؤسسين أرادوا إنشاء تكنولوجيا ذات قيمة وتطوير برامج تعمل على حل المشكلات الحقيقية."
+        },
+
+        founders: {
+
+            en:
+                "Founders: Shaban Elmalky, Basel Eslam, Sherif Tareq",
+
+            ar:
+                "المؤسسون: شعبان الملكي، باسل إسلام، شريف طارق"
+        },
+
+        date: {
+
+            en:
+                "Founded: FOUNDING DATE",
+
+            ar:
+                "تاريخ التأسيس: FOUNDING DATE"
+        }
+
+    },
+
+
+    {
+
+        icon: "🎯",
+
+        title: {
+
+            en: "Our Goal",
+
+            ar: "هدفنا"
+
+        },
+
+        content: {
+
+            en:
+                "Our goal is to create innovative, reliable and practical software solutions that help businesses work smarter, save time and solve everyday challenges. We want to combine technology, creativity and simplicity to build products that people can genuinely depend on.",
+
+            ar:
+                "هدفنا هو إنشاء حلول برمجية مبتكرة وموثوقة وعملية تساعد الشركات على العمل بكفاءة أكبر وتوفير الوقت وحل التحديات اليومية. نريد الجمع بين التكنولوجيا والإبداع والبساطة لبناء منتجات يمكن للناس الاعتماد عليها فعليًا."
+
+        },
+
+        founders: {
+            en: "",
+            ar: ""
+        },
+
+        date: {
+            en: "",
+            ar: ""
+        }
+
+    },
+
+
+    {
+
+        icon: "📈",
+
+        title: {
+
+            en: "Where We Are Now",
+
+            ar: "أين نحن الآن"
+
+        },
+
+        content: {
+
+            en:
+                "Today, Elmalky Tech is a six-member team working passionately on our project. We are continuously learning, improving and developing our ideas while growing together as a team. We are building the foundation for something bigger and are excited about the journey ahead.",
+
+            ar:
+                "اليوم، أصبح فريق الملكي للتكنولوجيا مكوّنًا من ستة أعضاء يعملون بشغف على مشروعنا. نواصل التعلم والتطوير وتحسين أفكارنا، بينما ننمو معًا كفريق واحد. نحن نبني الأساس لشيء أكبر، ونتطلع بحماس إلى المرحلة القادمة."
+
+        },
+
+        founders: {
+            en: "",
+            ar: ""
+        },
+
+        date: {
+            en: "",
+            ar: ""
+        }
+
+    },
+
+
+    {
+
+        icon: "🤝",
+
+        title: {
+
+            en: "Our Promise",
+
+            ar: "وعدنا"
+
+        },
+
+        content: {
+
+            en:
+                "We promise to deliver reliable and creative software that helps make life easier for businesses. We are committed to building solutions that are useful, dependable and thoughtfully designed around the people who use them.",
+
+            ar:
+                "نعد بتقديم برامج موثوقة ومبتكرة تساعد على جعل حياة الشركات أكثر سهولة. نحن ملتزمون ببناء حلول مفيدة وموثوقة ومصممة بعناية لتلبية احتياجات الأشخاص الذين يستخدمونها."
+
+        },
+
+        founders: {
+            en: "",
+            ar: ""
+        },
+
+        date: {
+            en: "",
+            ar: ""
+        }
+
+    }
+
+];
+
+
+
+/* =========================================
+   ELEMENTS
+   ========================================= */
+
+const languageSwitch =
+    document.getElementById("languageSwitch");
+
+const languageLabel =
+    document.getElementById("languageLabel");
+
+const storyBox =
+    document.getElementById("storyBox");
+
+const storyIcon =
+    document.getElementById("storyIcon");
+
+const storyTitle =
+    document.getElementById("storyTitle");
+
+const storyContent =
+    document.getElementById("storyContent");
+
+const founders =
+    document.getElementById("founders");
+
+const foundingDate =
+    document.getElementById("foundingDate");
+
+const steps =
+    document.querySelectorAll(".company-step");
+
+
+
+/* =========================================
+   CURRENT STATE
+   ========================================= */
+
+let currentStep = 0;
+
+let currentLanguage =
+    localStorage.getItem("elmalkyLanguage") || "en";
+
+
+
+/* =========================================
+   UPDATE STORY
+   ========================================= */
+
+function updateStory(stepIndex, animate = true) {
+
+    const story = stories[stepIndex];
+
+    const language = currentLanguage;
+
+
+    if (animate) {
+
+        storyBox.classList.add("changing");
+
+    }
+
+
+    const updateContent = function () {
+
+        storyIcon.textContent =
+            story.icon;
+
+        storyTitle.textContent =
+            story.title[language];
+
+        storyContent.textContent =
+            story.content[language];
+
+        founders.textContent =
+            story.founders[language];
+
+        foundingDate.textContent =
+            story.date[language];
+
+
+        /*
+         * Hide empty elements
+         */
+
+        founders.style.display =
+            story.founders[language]
+                ? "block"
+                : "none";
+
+        foundingDate.style.display =
+            story.date[language]
+                ? "block"
+                : "none";
+
+
+        /*
+         * Active step
+         */
+
+        steps.forEach(function (step, index) {
+
+            step.classList.toggle(
+                "active",
+                index === stepIndex
+            );
+
+        });
+
+
+        /*
+         * Animate box back in
+         */
+
+        storyBox.classList.remove(
+            "changing"
+        );
+
+    };
+
+
+    if (animate) {
+
+        setTimeout(
+            updateContent,
+            300
+        );
+
+    } else {
+
+        updateContent();
+
+    }
+
+}
+
+
+
+/* =========================================
+   STEPPER CLICK
+   ========================================= */
+
+steps.forEach(function (step) {
+
+    step.addEventListener(
+        "click",
+        function () {
+
+            const stepIndex =
+                Number(
+                    this.getAttribute("data-step")
+                );
+
+
+            if (
+                stepIndex === currentStep
+            ) {
+                return;
+            }
+
+
+            currentStep =
+                stepIndex;
+
+
+            updateStory(
+                currentStep,
+                true
+            );
+
+        }
+    );
+
+});
+
+
+
+/* =========================================
+   APPLY LANGUAGE
+   ========================================= */
+
+function applyLanguage(
+    language,
+    animate = true
+) {
+
+    currentLanguage = language;
+
+
+    /*
+     * Save language
+     */
+
+    localStorage.setItem(
+        "elmalkyLanguage",
+        language
+    );
+
+
+    const isArabic =
+        language === "ar";
+
+
+    /*
+     * Page language
+     */
+
+    document.documentElement.lang =
+        language;
+
+
+    /*
+     * RTL / LTR
+     */
+
+    document.documentElement.dir =
+        isArabic
+            ? "rtl"
+            : "ltr";
+
+
+    /*
+     * Translate all elements
+     */
+
+    document
+        .querySelectorAll(
+            "[data-en][data-ar]"
+        )
+        .forEach(function (element) {
+
+            element.textContent =
+                isArabic
+                    ? element.getAttribute(
+                        "data-ar"
+                    )
+                    : element.getAttribute(
+                        "data-en"
+                    );
+
+        });
+
+
+    /*
+     * Update switch
+     */
+
+    languageSwitch.checked =
+        isArabic;
+
+
+    languageLabel.textContent =
+        isArabic
+            ? "EN"
+            : "AR";
+
+
+    /*
+     * Update story
+     */
+
+    updateStory(
+        currentStep,
+        animate
+    );
+
+}
+
+
+
+/* =========================================
+   LANGUAGE SWITCH
+   ========================================= */
+
+languageSwitch.addEventListener(
+    "change",
+    function () {
+
+        const newLanguage =
+            this.checked
+                ? "ar"
+                : "en";
+
+
+        /*
+         * Animate page
+         */
+
+        document.body.classList.add(
+            "language-changing"
+        );
+
+
+        languageLabel.classList.add(
+            "language-label-changing"
+        );
+
+
+        setTimeout(function () {
+
+            applyLanguage(
+                newLanguage,
+                true
+            );
+
+
+            setTimeout(function () {
+
+                languageLabel.classList.remove(
+                    "language-label-changing"
+                );
+
+                document.body.classList.remove(
+                    "language-changing"
+                );
+
+            }, 100);
+
+        }, 220);
+
+    }
+);
+
+
+
+/* =========================================
+   INITIALIZE
+   ========================================= */
+
+applyLanguage(
+    currentLanguage,
+    false
+);
+
+</script>
+
+
+</body>
+
+</html>
+```

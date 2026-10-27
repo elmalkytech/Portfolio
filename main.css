@@ -1,0 +1,96 @@
+
+.language-changing {
+    animation: languageFade 0.45s ease;
+}
+
+@keyframes languageFade {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    45% {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Smooth direction change */
+html {
+    transition: direction 0.4s ease;
+}
+
+
+/* Smooth text changes */
+[data-en][data-ar] {
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* Language switch area */
+.form-field {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* Language label */
+#languageLabel {
+    min-width: 25px;
+    display: inline-block;
+    font-weight: 600;
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+.story-box {
+    width: 100%;
+    max-width: 750px;
+    min-height: 310px;
+
+    padding: 50px 55px;
+
+    border-radius: 25px;
+
+    background: #e9ecef;
+
+    border: 1px solid #d1d5d8;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.08);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    
+}
+/* When changing language */
+.language-label-changing {
+    opacity: 0;
+    transform: translateY(-5px);
+}
+
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}

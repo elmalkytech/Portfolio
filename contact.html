@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | Elmalky Tech</title>
+
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha1/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+
+    <style>
+
+        /* =========================================
+           GLOBAL
+        ========================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+            background: #151515;
+
+            color: #f1f1f1;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =========================================
+           NAVBAR
+        ========================================= */
+
+        .navbar {
+            padding: 18px 40px;
+
+            background: #1c1c1c;
+
+            border-bottom: 1px solid #333;
+
+            box-shadow:
+                0 4px 20px rgba(0, 0, 0, 0.35);
+        }
+
+
+        .navbar .container-fluid {
+            width: 100%;
+        }
+
+
+        .navbar-brand {
+            font-size: 25px;
+
+            font-weight: 700;
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            transition:
+                color 0.25s ease;
+        }
+
+
+        .navbar-brand:hover {
+            color: #d0d0d0;
+        }
+
+
+        /* =========================================
+           NAVIGATION
+        ========================================= */
+
+        .nav-links {
+            display: flex;
+
+            align-items: center;
+
+            gap: 30px;
+        }
+
+
+        .nav-links a {
+            color: #dddddd;
+
+            text-decoration: none;
+
+            font-size: 16px;
+
+            transition:
+                color 0.25s ease;
+        }
+
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+
+        /* =========================================
+           LANGUAGE AREA
+        ========================================= */
+
+        .form-field {
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+        }
+
+
+        #languageLabel {
+            display: inline-block;
+
+            min-width: 28px;
+
+            color: #dddddd;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            line-height: 22px;
+
+            text-align: center;
+
+            cursor: pointer;
+
+            opacity: 1;
+
+            transform: none;
+
+            transition:
+                opacity 0.25s ease,
+                transform 0.25s ease;
+        }
+
+
+        /* =========================================
+           LANGUAGE SWITCH
+        ========================================= */
+
+        .switch {
+            position: relative;
+
+            width: 42px;
+
+            height: 22px;
+
+            display: block;
+
+            flex-shrink: 0;
+
+            cursor: pointer;
+        }
+
+
+        .switch input {
+            position: absolute;
+
+            width: 1px;
+            height: 1px;
+
+            opacity: 0;
+
+            pointer-events: none;
+        }
+
+
+        /* Track */
+
+        .switch::before {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background: #555555;
+
+            border-radius: 20px;
+
+            transition:
+                background 0.3s ease;
+        }
+
+
+        /* Thumb */
+
+        .switch::after {
+            content: "";
+
+            position: absolute;
+
+            width: 16px;
+
+            height: 16px;
+
+            left: 3px;
+
+            top: 3px;
+
+            background: #ffffff;
+
+            border-radius: 50%;
+
+            transition:
+                transform 0.3s ease;
+        }
+
+
+        /* Arabic / active state */
+
+        .switch.active::before {
+            background: #777777;
+        }
+
+
+        .switch.active::after {
+            transform: translateX(20px);
+        }
+
+
+        /* =========================================
+           MAIN CONTENT
+        ========================================= */
+
+        .contact-section {
+            min-height: calc(100vh - 80px);
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 70px 20px;
+        }
+
+
+        .contact-container {
+            width: 100%;
+
+            max-width: 950px;
+
+            text-align: center;
+        }
+
+
+        /* =========================================
+           LANGUAGE ANIMATION
+        ========================================= */
+
+        .contact-container.language-changing {
+            animation:
+                languageFade 0.5s ease;
+        }
+
+
+        @keyframes languageFade {
+
+            0% {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+
+            45% {
+                opacity: 0;
+
+                transform:
+                    translateY(-8px);
+            }
+
+            100% {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        /* =========================================
+           TITLE
+        ========================================= */
+
+        .contact-title {
+            font-size: 44px;
+
+            font-weight: 700;
+
+            margin: 0 0 15px;
+
+            color: #ffffff;
+        }
+
+
+        .contact-subtitle {
+            max-width: 650px;
+
+            margin:
+                0 auto 55px;
+
+            color: #aaaaaa;
+
+            font-size: 18px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           CONTACT CARDS
+        ========================================= */
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .contact-card {
+            background: #2a2a2a;
+
+            border:
+                1px solid #3d3d3d;
+
+            border-radius: 22px;
+
+            padding: 40px 25px;
+
+            min-height: 240px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-decoration: none;
+
+            color: #ffffff;
+
+            box-shadow:
+                0 15px 40px
+                rgba(0, 0, 0, 0.30);
+
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+
+        .contact-card:hover {
+            transform:
+                translateY(-8px);
+
+            background: #333333;
+
+            border-color: #555555;
+
+            box-shadow:
+                0 20px 50px
+                rgba(0, 0, 0, 0.45);
+        }
+
+
+        .contact-icon {
+            font-size: 45px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .contact-card h3 {
+            font-size: 21px;
+
+            font-weight: 600;
+
+            margin:
+                0 0 12px;
+
+            color: #ffffff;
+        }
+
+
+        .contact-card p {
+            margin: 0;
+
+            color: #bcbcbc;
+
+            font-size: 15px;
+
+            word-break: break-word;
+        }
+
+
+        /* =========================================
+           FOOTER TEXT
+        ========================================= */
+
+        .contact-footer {
+            margin-top: 45px;
+
+            color: #888888;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================================
+           RTL
+        ========================================= */
+
+        html[dir="rtl"] .nav-links {
+            direction: rtl;
+        }
+
+
+        html[dir="rtl"] .contact-container {
+            direction: rtl;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 768px) {
+
+            .navbar {
+                padding:
+                    16px 20px;
+            }
+
+
+            .nav-links {
+                gap: 15px;
+            }
+
+
+            .contact-section {
+                padding:
+                    50px 20px;
+            }
+
+
+            .contact-title {
+                font-size: 36px;
+            }
+
+
+            .contact-subtitle {
+                font-size: 16px;
+
+                margin-bottom: 35px;
+            }
+
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+
+                max-width: 450px;
+
+                margin: auto;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            .navbar {
+                padding:
+                    15px;
+            }
+
+
+            .navbar-brand {
+                font-size: 21px;
+            }
+
+
+            .nav-links {
+                gap: 10px;
+            }
+
+
+            .nav-links a {
+                font-size: 14px;
+            }
+
+
+            #languageLabel {
+                min-width: 25px;
+
+                font-size: 13px;
+            }
+
+
+            .contact-title {
+                font-size: 30px;
+            }
+        }
+
+
+        /* =========================================
+           REDUCED MOTION
+        ========================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+
+                animation-duration: 0.01ms !important;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         NAVBAR
+    ========================================= -->
+
+    <nav class="navbar">
+
+        <div class="container-fluid">
+
+            <div
+                class="d-flex justify-content-between align-items-center w-100">
+
+
+                <!-- Logo -->
+
+                <a
+                    class="navbar-brand"
+                    href="/index.html"
+                    data-en="Elmalky Tech"
+                    data-ar="الملكي للتكنولوجيا">
+
+                    Elmalky Tech
+
+                </a>
+
+
+                <!-- Navigation -->
+
+                <div class="nav-links">
+
+
+                    <a
+                        href="/whoweare.html"
+                        data-en="Who we are"
+                        data-ar="من نحن">
+
+                        Who we are
+
+                    </a>
+
+
+                    <a
+                        href="/contact.html"
+                        data-en="Contact"
+                        data-ar="اتصل بنا">
+
+                        Contact
+
+                    </a>
+
+
+                    <!-- Language -->
+
+                    <div class="form-field">
+
+                        <label
+                            class="switch theme-secondary"
+                            id="languageSwitchContainer"
+                            for="languageSwitch">
+
+                            <input
+                                type="checkbox"
+                                id="languageSwitch"
+                                role="switch"
+                                aria-label="Change language">
+
+                        </label>
+
+
+                        <label
+                            for="languageSwitch"
+                            id="languageLabel">
+
+                            AR
+
+                        </label>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =========================================
+         CONTACT CONTENT
+    ========================================= -->
+
+    <main class="contact-section">
+
+        <div
+            class="contact-container"
+            id="contactContent">
+
+
+            <h1
+                class="contact-title"
+                data-en="Contact Us"
+                data-ar="تواصل معنا">
+
+                Contact Us
+
+            </h1>
+
+
+            <p
+                class="contact-subtitle"
+                data-en="Have a question, an idea, or a project in mind? We would love to hear from you."
+                data-ar="هل لديك سؤال أو فكرة أو مشروع في ذهنك؟ يسعدنا أن نسمع منك.">
+
+                Have a question, an idea, or a project in mind?
+                We would love to hear from you.
+
+            </p>
+
+
+            <div class="contact-grid">
+
+
+                <!-- =================================
+                     WHATSAPP
+                ================================= -->
+
+                <a
+                    class="contact-card"
+                    href="https://wa.me/201014951449"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+
+                    <div class="contact-icon">
+                        💬
+                    </div>
+
+
+                    <h3
+                        data-en="WhatsApp"
+                        data-ar="واتساب">
+
+                        WhatsApp
+
+                    </h3>
+
+
+                    <p>
+                        +20 101 495 1449
+                    </p>
+
+
+                </a>
+
+
+                <!-- =================================
+                     PERSONAL EMAIL
+                ================================= -->
+
+                <a
+                    class="contact-card"
+                    href="mailto:shaban.waleed@outook.com">
+
+
+                    <div class="contact-icon">
+                        ✉️
+                    </div>
+
+
+                    <h3
+                        data-en="Personal Email"
+                        data-ar="البريد الإلكتروني الشخصي">
+
+                        Personal Email
+
+                    </h3>
+
+
+                    <p>
+                        shaban.waleed@outook.com
+                    </p>
+
+
+                </a>
+
+
+                <!-- =================================
+                     COMPANY EMAIL
+                ================================= -->
+
+                <a
+                    class="contact-card"
+                    href="mailto:elmalky.tech@outlook.com">
+
+
+                    <div class="contact-icon">
+                        🏢
+                    </div>
+
+
+                    <h3
+                        data-en="Company Email"
+                        data-ar="البريد الإلكتروني للشركة">
+
+                        Company Email
+
+                    </h3>
+
+
+                    <p>
+                        elmalky.tech@outlook.com
+                    </p>
+
+
+                </a>
+
+
+            </div>
+
+
+            <div
+                class="contact-footer"
+                data-en="We look forward to hearing from you."
+                data-ar="نتطلع إلى التواصل معكم.">
+
+                We look forward to hearing from you.
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================================
+         LANGUAGE JAVASCRIPT
+    ========================================= -->
+
+    <script>
+
+        /* =========================================
+           ELEMENTS
+        ========================================= */
+
+        const languageSwitch =
+            document.getElementById(
+                "languageSwitch"
+            );
+
+
+        const languageSwitchContainer =
+            document.getElementById(
+                "languageSwitchContainer"
+            );
+
+
+        const languageLabel =
+            document.getElementById(
+                "languageLabel"
+            );
+
+
+        const contactContent =
+            document.getElementById(
+                "contactContent"
+            );
+
+
+        /* =========================================
+           CURRENT LANGUAGE
+        ========================================= */
+
+        let currentLanguage =
+            localStorage.getItem(
+                "elmalkyLanguage"
+            ) || "en";
+
+
+        /* =========================================
+           TRANSLATE PAGE
+        ========================================= */
+
+        function applyLanguage(
+            language,
+            animate = false
+        ) {
+
+            currentLanguage = language;
+
+
+            const isArabic =
+                language === "ar";
+
+
+            /* Save language */
+
+            localStorage.setItem(
+                "elmalkyLanguage",
+                language
+            );
+
+
+            /* Set document language */
+
+            document.documentElement.lang =
+                language;
+
+
+            /* Set RTL / LTR */
+
+            document.documentElement.dir =
+                isArabic
+                    ? "rtl"
+                    : "ltr";
+
+
+            /* Translate everything */
+
+            document
+                .querySelectorAll(
+                    "[data-en][data-ar]"
+                )
+                .forEach(function(element) {
+
+                    element.textContent =
+                        isArabic
+                            ? element.getAttribute(
+                                "data-ar"
+                              )
+                            : element.getAttribute(
+                                "data-en"
+                              );
+
+                });
+
+
+            /* Update switch */
+
+            languageSwitch.checked =
+                isArabic;
+
+
+            /* Update switch visual */
+
+            languageSwitchContainer
+                .classList.toggle(
+                    "active",
+                    isArabic
+                );
+
+
+            /* Update language label */
+
+            languageLabel.textContent =
+                isArabic
+                    ? "EN"
+                    : "AR";
+
+
+            /*
+                Make absolutely sure the
+                language label is visible.
+            */
+
+            languageLabel.style.opacity =
+                "1";
+
+            languageLabel.style.transform =
+                "none";
+
+
+            /* Animate content */
+
+            if (animate) {
+
+                restartLanguageAnimation();
+
+            }
+
+        }
+
+
+        /* =========================================
+           RESTART ANIMATION
+        ========================================= */
+
+        function restartLanguageAnimation() {
+
+            /*
+                Remove the animation class.
+            */
+
+            contactContent.classList.remove(
+                "language-changing"
+            );
+
+
+            /*
+                Force browser reflow.
+
+                This is what allows the same
+                CSS animation to run repeatedly.
+            */
+
+            void contactContent.offsetWidth;
+
+
+            /*
+                Start animation again.
+            */
+
+            contactContent.classList.add(
+                "language-changing"
+            );
+
+
+            /*
+                Remove the class after
+                the animation finishes.
+            */
+
+            setTimeout(function() {
+
+                contactContent.classList.remove(
+                    "language-changing"
+                );
+
+            }, 550);
+
+        }
+
+
+        /* =========================================
+           LANGUAGE SWITCH EVENT
+        ========================================= */
+
+        languageSwitch.addEventListener(
+            "change",
+            function() {
+
+                const newLanguage =
+                    this.checked
+                        ? "ar"
+                        : "en";
+
+
+                applyLanguage(
+                    newLanguage,
+                    true
+                );
+
+            }
+        );
+
+
+        /* =========================================
+           INITIALIZE
+        ========================================= */
+
+        applyLanguage(
+            currentLanguage,
+            false
+        );
+
+    </script>
+
+
+</body>
+
+</html>
